@@ -1,0 +1,53 @@
+package sandBox;
+import java.util.Scanner;
+public class UnitConverter {
+    //all converstions being used
+    private static double millimetersToInches(double inches){
+        final double mm2InFormula = 25.4;
+        return inches / mm2InFormula;
+    }
+    private static double millimetersToFeet(double feet){
+        final double mm2FtFormula = 305;
+        return feet / mm2FtFormula;
+    }
+    private static double millimetersToMiles(double miles){
+        final double mm2MileFormula = 1609000;
+        return miles / mm2MileFormula;
+    }
+    
+    public static void main(String[] args){
+        //System Variables
+        Scanner userInputScanner = new Scanner(System.in);
+        
+        //Welcome Message
+        System.out.println("Welcome to this converter tool!");
+        System.out.println("This converter will take millimeters and convert it to inches, feet, miles");
+        
+        //user input measurement start
+        System.out.println("Please enter the millimeters you want converted:");
+        
+        double userMillimeters = userInputScanner.nextDouble();
+                
+        //user input conversion type       
+        System.out.println("Please select the measurment you want your millimeters in:");
+        System.out.println("1. Inches");
+        System.out.println("2. Feet");
+        System.out.println("3. Miles");
+        double userInput = userInputScanner.nextDouble();
+        double userInput = (int) userInput;
+        
+        switch (userInput){
+            case 1:
+                System.out.println(userMillimeters + "in inches is" + millimetersToInches);
+                break;
+            case 2:
+                System.out.println(userMillimeters + "in feet is" + millimetersToFeet);
+                break;
+            case 3:
+                System.out.println(serMillimeters + "in miles is" + millimetersToMiles);
+                break;
+            default:
+                System.out.println("Sorry, I did not understand your request. Please try again.");
+        } 
+    } 
+}
