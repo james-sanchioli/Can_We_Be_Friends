@@ -1,0 +1,67 @@
+package sandBox;
+import java.util.Random;
+public class ls3_classStructure {
+    private static int totalRiders = 0;
+    private static int totalFailedRiders = 0;
+    private static int totalSickRiders = 0;
+    
+    final static int minimumHeightToRideThrills = 60;
+    final static int minimumHeightToRideTheme = 30;
+    
+        public static void main(String[] args){
+            System.out.println("");
+            rideBlackWidow(10,60);
+            printRiderStats();
+            rideBlackWidow(4,60);
+            printRiderStats();
+            rideBlackWidow(342,60);
+            printRiderStats();
+            
+        public static void rideSteelPhantom(int riders, int avgHeight){
+            System.out.print("Riding Black Widow!!!");
+            totalRiders = totalRiders + riders;
+        }
+        public static void rideHauntedHouse(int riders, int avgHeight){
+        }
+        public static void printRiderStats(){
+            System.out.print("total riders:" + totalRiders);
+        }
+        
+        public static void rideSteelPhantom(int riders, int avgHeight){
+        if(avgHeight >= minimumHeightToRideThrills){
+            
+            System.out.println("On the Steel Phantom");
+            System.out.println("I AINT AFRAID OF NO GHOST!\n");
+            totalRiders = totalRiders + riders;
+            Random rand = new Random();
+            int numSickRiders = rand.nextInt(riders);
+            totalSickRiders = totalSickRiders + numSickRiders;
+        } else {
+            System.out.println(riders + "Perspective Rider turned away: not tall enough.\n");
+            totalFailedRiders = totalFailedRiders + riders;
+        }
+        public static void rideHauntedHouse(int riders, int avgHeight){
+        if(avgHeight >= minimumHeightToRideTheme){
+            
+            System.out.println("Haunted House Time!");
+            System.out.println("Watch out! That jump scare almost got me.\n");
+            totalRiders = totalRiders + riders;
+            Random rand = new Random();
+            int numSickRiders = rand.nextInt(riders);
+            totalSickRiders = totalSickRiders + numSickRiders;
+            
+        } else {
+            System.out.println(riders + "Perspective Rider Turned away: did not meet height requirement.\n");
+            totalFailedRiders = totalFailedRiders + riders;
+        } // end if/else
+     
+        public static void printRiderStats(){
+        
+        System.out.println("*******RIDER STATS*********");
+        System.out.println("Total Riders: " + totalRiders);
+        System.out.println("Total Failed Ride Attempts: " + totalFailedRiders);
+        System.out.println("Total sick riders: " + totalSickRiders);
+        System.out.println("***************************\n");
+        
+    }
+}
