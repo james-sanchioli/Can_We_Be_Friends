@@ -1,0 +1,172 @@
+package com.mycompany.horrormoviesurvivalcalculator;
+import java.util.Scanner;
+public class Calculator {
+     public static void main(String[] args){
+         //Variables to be used in this test
+         //These varibales are for the users side of the test
+         String userName;
+         String hunterSelection = null;
+         int knowledge = 0;
+         int resourcefulness = 0;
+         int caution = 0;
+         int fate = 0;
+         //These variables are for the computers side of the test
+         String hunter;
+         int sneak = 0;
+         int cruelty = 0;
+         int intelligence = 0;
+         
+         Scanner userInputScanner = new Scanner(System.in);
+         //gathering the name
+         System.out.println("Welcome to the Horror Movie Survival Test!");
+         System.out.println("To get started, do you mind if we borrow your name?");
+         userName = userInputScanner.next();
+         //intro
+         System.out.println("Well " + userName + " it is a pleasure to meet you!");
+         System.out.println("Here is a quick rundown on how this test works");
+         System.out.println("You will be using your knowledge, resourcefulness, and awareness to outsmart your hunter.");
+         System.out.println("You will have three different scenarios you will answer questions in, but be careful!");
+         System.out.println("If you answer enough questions poorly, you may jsut find that your journy ends quicker than expected.");
+         System.out.println("Ready? Lets begin!");
+         System.out.println("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
+         //hunter switch
+         System.out.println("Pick your hunter by typing in the proper number:");
+         System.out.println("The Alien (1), The Nightmare (2), The Ghostface (3), The Shape (4)");
+         hunterSelection = userInputScanner.next();
+         
+         switch(hunterSelection){
+             case "1":
+                 hunter = "The Alien";
+                 sneak = 6;
+                 cruelty = 3;
+                 intelligence = 3;
+                 System.out.println("The Alien is an extremly sly monster that sneaks up on its victims.");
+                 System.out.println("Do not try to outmonuver it, try to outsmart it");
+             case "2":
+                 hunter = "The Nightmare";
+                 sneak = 4;
+                 cruelty = 5;
+                 intelligence = 3;
+                 System.out.println("The Nightmare is a dream hopping terror that scares its victims at every opprotunity.");
+                 System.out.println("It is best to outsmart this hunter, the real world tends to be his weakness");
+             case "3":
+                 hunter = "The Ghostface";
+                 sneak = 4;
+                 cruelty = 2;
+                 intelligence = 6;
+                 System.out.println("The Ghostface is a highly intelligent human who prowls at night.");
+                 System.out.println("You probably can not match their cunning plans, so you may have to be extremly scrappy.");
+             case "4":
+                 hunter = "The Shape";
+                 sneak = 5;
+                 cruelty = 3;
+                 intelligence = 4;
+                 System.out.println("The Shape is a menace because of thier well rounded knowledge.");
+                 System.out.println("Once the Shape is after you, ");  
+         }                 
+         System.out.println("Best of luck, and I hope to see you at the end.");
+         System.out.println("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
+         //Start Scenario 1
+         System.out.println("Scenario 1: The Urban Legend");
+         //Question 1
+         System.out.println("It is a Friday night and your best friend calls you for a favor.");
+         System.out.println("They and thier partner want to spend a night out, and ask if you could watch thier two kids");
+         System.out.println("being the best friend you are, you agree and head over.");
+         System.out.println("Once you get there, you recieve a phone call from an unknown caller.");
+         System.out.println("When you pick up, all you can hear is breathing. Each time you hang up they just call again.");
+         System.out.println("What do you do?:");
+         System.out.println("a) Ignore them. it is probably a bad joke.");
+         System.out.println("b) Call your friend, see if it is some kind of silly prank.");
+         System.out.println("c) Call the police, it is better safe than sorry.");
+         System.out.println("d) Get the kids and yourself to the neighbors, something is wrong");
+         String questionOne = userInputScanner.next();
+         switch(questionOne){
+             case "a":
+                 fate = fate + 1;
+                 System.out.println("After ignoring them for an hour, it seems like they did not catch the hint.");
+                 System.out.println("The ringing has started scaring the kids, so you decide to call the police");
+             case "b":
+                 knowledge = knowledge + 1;
+                 System.out.println("Your friends swears up and down that this is not a joke, and they are now concerned");
+                 System.out.println("Per your friends request, you call the police");
+             case "c":
+                 caution = caution + 2;
+                 System.out.println("At first you are dismissed by the operator as an axious person.");
+                 System.out.println("However you keep persisting till you reach the contact of the local police station");
+             case "d":
+                 resourcefulness = resourcefulness + 1;
+                 System.out.println("After knocking on all the neighbors doors, another family lets you and the kids in.");
+                 System.out.println("Once you explain your situation, the neighbors convince you to contact the police");
+         }
+         //Question 2
+         System.out.println("Since the calls are not stopping, and the police agree to help you.");
+         System.out.println("They decide to put a trace on your phone, and hope they can find this prankster");
+         System.out.println("Unfortunatly, you are told to wait in your friends house");
+         System.out.println("Where do you wait in the house?");
+         System.out.println("a) The Living Room");
+         System.out.println("b) The Kitchen");
+         System.out.println("c) The Bedroom");
+         System.out.println("d) The Basement");
+         String questionTwo = userInputScanner.next();
+         switch(questionTwo){
+             case "a":
+                 caution = caution + 1;
+                 System.out.println("Smart move. You have plenty of room to move in case of an emergency.");
+             case "b":
+                 resourcefulness = resourcefulness + 1;
+                 System.out.println("The utility of this room can not be understanted. You are ready for anything.");
+             case "c":
+                 fate = fate + 1;
+                 System.out.println("Interesting choice. At least you can wait in a cozy room to recieve your next instruction");
+             case "d":
+                 knowledge = knowledge + 1;
+                 System.out.println("Good call. It will be harder to find you with all the storage containers around.");
+         }
+         //Question 3
+         System.out.println("The prankster finally calls again, and you are forced to listen to the breathing.");
+         System.out.println("Just as you think nothing will happen, you get a call from the police!");
+         System.out.println("All you hear from the officer is 'they are in the house'!");
+         System.out.println("A loud thump sounds from the floor above you.");
+         System.out.println("How do you react?");
+         System.out.println("a) Run out of the house!");
+         System.out.println("b) Prepare to stand your ground!");
+         System.out.println("c) Call your friend to tell them!");
+         System.out.println("d) Go on the offensive and find the harasser yourself!");
+         String questionThree = userInputScanner.next();
+         switch(questionThree){
+             case "a":
+                 knowledge = knowledge + 1;
+                 caution = caution + 1;
+                 System.out.println("Better safe then sorry! Good job on getting out on time, who knows what crazy person was there");
+             case "b":
+                 resourcefulness = resourcefulness + 1;
+                 System.out.println("With your knwoledge, you feel confident you can defend yourself. Hopefully you can use the house to your advantage!");
+             case "c":
+                 fate = fate + 1;
+                 System.out.println("You have to let them know some kind of psycho was in their house! Hopefully they don't catch you...");
+             case "d":
+                 fate = fate + 1;
+                 System.out.println("How hard can it be to take down one other person? Hopefully you can make it back in one piece");
+         }
+        System.out.println("Scenario 1 is now over. Here is what we have gathered:");
+        System.out.println("From that scenario, you have " + knowledge + "points in knwoledge.");
+        System.out.println("You also have " + resourcefulness + "resourcefulness points.");
+        System.out.println("Finally, you now have " + caution + "points with caution");
+        if(fate > 2){
+            System.out.println("Well I have got some good and bad news for you.");
+            System.out.println("The good news is that the hunter did not need to catch you!");
+            System.out.println("The bad news is that you defenitaly would not survive a horror movie.");
+            System.out.println("In the end, it was totally your choices that led to your stage left exit.");
+            System.out.println("Well " + userName + "Why dont you come back later and try again?");
+            break;
+        }else{
+            System.out.println("Are you ready for the next scenario?");
+            System.out.println("Well, it does not really matter, since it is starting automatically");
+        }  
+        //Scenario 2
+        System.out.println("Scenario 2: The Cabin in the Woods");
+        //Scenario 3
+        System.out.println("Scenario 3: The Chain Letter");
+       
+  }           
+}
