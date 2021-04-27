@@ -6,6 +6,8 @@ public class Calculator {
          //These varibales are for the users side of the test
          String userName;
          String hunterSelection = null;
+         String guestSelection = null;
+         String itemSelection = null;
          int knowledge = 0;
          int resourcefulness = 0;
          int caution = 0;
@@ -25,8 +27,8 @@ public class Calculator {
          System.out.println("Well " + userName + " it is a pleasure to meet you!");
          System.out.println("Here is a quick rundown on how this test works");
          System.out.println("You will be using your knowledge, resourcefulness, and awareness to outsmart your hunter.");
-         System.out.println("You will have three different scenarios you will answer questions in, but be careful!");
-         System.out.println("If you answer enough questions poorly, you may jsut find that your journy ends quicker than expected.");
+         System.out.println("You will have two different scenarios and one similution to answer questions for, but be careful!");
+         System.out.println("If you answer enough questions poorly, you may find that your journy ends quicker than expected.");
          System.out.println("Ready? Lets begin!");
          System.out.println("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
          //hunter switch
@@ -140,7 +142,7 @@ public class Calculator {
                  System.out.println("Better safe then sorry! Good job on getting out on time, who knows what crazy person was there");
              case "b":
                  resourcefulness = resourcefulness + 1;
-                 System.out.println("With your knwoledge, you feel confident you can defend yourself. Hopefully you can use the house to your advantage!");
+                 System.out.println("With your knwoledge, you feel confident you can defend yourself.");
              case "c":
                  fate = fate + 1;
                  System.out.println("You have to let them know some kind of psycho was in their house! Hopefully they don't catch you...");
@@ -148,25 +150,127 @@ public class Calculator {
                  fate = fate + 1;
                  System.out.println("How hard can it be to take down one other person? Hopefully you can make it back in one piece");
          }
+        //ending of Scenario 1
         System.out.println("Scenario 1 is now over. Here is what we have gathered:");
-        System.out.println("From that scenario, you have " + knowledge + "points in knwoledge.");
-        System.out.println("You also have " + resourcefulness + "resourcefulness points.");
-        System.out.println("Finally, you now have " + caution + "points with caution");
+        System.out.println("From that scenario, you have " + knowledge + " points in knwoledge.");
+        System.out.println("You also have " + resourcefulness + " resourcefulness points.");
+        System.out.println("Finally, you now have " + caution + " points with caution");
         if(fate > 2){
             System.out.println("Well I have got some good and bad news for you.");
             System.out.println("The good news is that the hunter did not need to catch you!");
             System.out.println("The bad news is that you defenitaly would not survive a horror movie.");
             System.out.println("In the end, it was totally your choices that led to your stage left exit.");
-            System.out.println("Well " + userName + "Why dont you come back later and try again?");
+            System.out.println("Well " + userName + ", why dont you come back later and try again?");
             break;
         }else{
-            System.out.println("Are you ready for the next scenario?");
+            System.out.println("Are you ready for the second scenario?");
             System.out.println("Well, it does not really matter, since it is starting automatically");
         }  
         //Scenario 2
-        System.out.println("Scenario 2: The Cabin in the Woods");
-        //Scenario 3
-        System.out.println("Scenario 3: The Chain Letter");
-       
-  }           
-}
+        System.out.println("Scenario 2: The Chain Letter");
+        //question 4
+        System.out.println("Your friend has been telling you about this supposidly haunted tape for the past few days.");
+        System.out.println("It is suppose to flash a series of creepy images, then a unknown number will call you and whisper '7 days'");
+        System.out.println("He doesn't know what that means, but he invites you over to watch the tape with him.");
+        System.out.println("What do you do?");
+        System.out.println("a) Accept, I do not believe in haunted tapes.");
+        System.out.println("b) Accept, what is the worst that can happen?");
+        System.out.println("c) Reject, I do not want to mess with that haunted stuff");
+        System.out.println("d) Reject, I have other plans");
+        String questionFour = userInputScanner.next();
+        switch(questionFour){
+            case "a":
+                fate = fate + 1;
+                System.out.println("Your Friends is overjoyed!");
+                System.out.println("They can not wait to see you.");
+            case "b":
+                fate = fate + 1;
+                System.out.println("Your Friend is very excited!");
+                System.out.println("They can not wait to watch the tape with you.");
+            case "c":
+                knowledge = knowledge + 1;
+                caution = caution + 1;
+                System.out.println("Feeling slight unnerved, you start to relax when there is a knock on the door!");
+                System.out.println("It is your friend! They came with the tape, and now you have no choice but to invite them in!");
+            case "d":
+                resourcefulness = resourcefulness + 1;
+                caution = caution + 1;
+                System.out.println("Your Friends appears sympathetic, however an hour after you rejct, there is a knock on the door.");
+                System.out.println("It is your friend! They came with the tape, and now you have no choice but to invite them in.");
+        }
+        //question 5
+        System.out.println("You and your frined settle in to watch the tape.");
+        System.out.println("The tape is very strange, but nothing special.");
+        System.out.println("However when it ends, both your friend and your phones start ringing.");
+        System.out.println("Looking, it is from an unknown caller!");
+        System.out.println("What do you do?");
+        System.out.println("a) Answer it!");
+        System.out.println("b) Decline it!");
+        System.out.println("c) Ignore it!");
+        System.out.println("d) Ditch the phone!");
+        String questionFive = userInputScanner.next();
+        switch(questionFive){
+            case "a":
+                fate = fate + 1;
+                System.out.println("You answer the phone, and a young child whispers '7 days'.");
+            case "b":
+                fate = fate + 1;
+                caution = caution + 1;
+                System.out.println("It does not seem to matter how much you decline it, they just keep calling.");
+                System.out.println("so you accept your fate.");
+                System.out.println("You answer the phone, and a young child whispers '7 days'.");
+            case "c":
+                fate = fate + 1;
+                resourcefulness = resourcefulness + 1;
+                System.out.println("It does not seem to matter how much you ignore it, they just keep calling.");
+                System.out.println("so you accept your fate.");
+                System.out.println("You answer the phone, and a young child whispers '7 days'.");
+                
+            case "d":
+                fate = fate + 1;
+                knowledge = knowledge + 1;
+                System.out.println("Looking at your friends face, you know it was bad.");
+                System.out.println("They look at you and tell you that the voice said '7 days'!");
+        }
+        //question 6
+        System.out.println("Now that you know it was not a rumor, it is impossible to deny that something bad happens in 7 days.");
+        System.out.println("What do you plan to do for the next 7 days?");
+        System.out.println("a) Buisness as usual");
+        System.out.println("b) Investigate the origions of the tape");
+        System.out.println("c) Prepare to fight in 7 days");
+        System.out.println("d) Contact the last person to watch the tape, and see what they say");
+        String questionSix = userInputScanner.next();
+        switch(questionSix){
+            case "a":
+                fate = fate + 2;
+                System.out.println("Unfortuanly this was not the wisest choice.");
+                System.out.println("7 days later, your learned the truth about the tape the hard way");
+            case "b":
+                knowledge = knowledge + 2;
+                System.out.println("Learning everything you could about the mystery behind the tape, you learn of a rule loop hole.");
+                System.out.println("You were able to save yourself, but your friend was not as lucky");
+            case "c":
+                caution = caution + 2;
+                System.out.println("Preparing for the horrors surrounding the tape, you were able to ");
+                System.out.println("Unfortunetly you could not fight back the evil from the tape.");
+            case "d":
+                resourcefulness = resourcefulness + 2;
+                System.out.println("Learning everything you could about the mystery behind the tape, you learn of a rule loop hole.");
+                System.out.println("You were able to save not only yourself, but your friend as well!");
+        }
+        //ending of scenario 2
+        System.out.println("Scenario 2 is now over. Here is what we have gathered:");
+        System.out.println("From that scenario, you have " + knowledge + "points in knwoledge.");
+        System.out.println("You also have " + resourcefulness + "resourcefulness points.");
+        System.out.println("Finally, you now have " + caution + "points with caution");
+        if(fate > 4){
+            System.out.println("Well I have got some good and bad news for you.");
+            System.out.println("The good news is that the hunter did not need to catch you!");
+            System.out.println("The bad news is that you defenitaly would not survive a horror movie.");
+            System.out.println("In the end, it was totally your choices that led to exit stage left.");
+            System.out.println("Well " + userName + ", why dont you come back later and try again?");
+            break;
+        }else{
+            System.out.println("You are done with the scenarios and you are ready for the next step!");
+            System.out.println("Now it is time to face your hunter.");
+            System.out.println("Take your time, and be careful!");
