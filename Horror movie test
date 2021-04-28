@@ -3,17 +3,18 @@ import java.util.Scanner;
 public class Calculator {
      public static void main(String[] args){
          //Variables to be used in this test
-         //These varibales are for the users side of the test
+         //These varibales are for the users side of the test and they enter them
          String userName;
          String hunterSelection = null;
-         String guestSelection = null;
          String itemSelection = null;
+         String musicInstrument = null;
+         //These variables are for the computers side of the test (the players stats)
          int knowledge = 0;
          int resourcefulness = 0;
          int caution = 0;
          int fate = 0;
-         //These variables are for the computers side of the test
-         String hunter;
+         //These variables are for the computers side of the test (the hunters stats)
+         String hunter = null;
          int sneak = 0;
          int cruelty = 0;
          int intelligence = 0;
@@ -274,3 +275,351 @@ public class Calculator {
             System.out.println("You are done with the scenarios and you are ready for the next step!");
             System.out.println("Now it is time to face your hunter.");
             System.out.println("Take your time, and be careful!");
+        }
+        //Scenario 3
+        System.out.println("Simulation: The Cabin in the Woods");
+        System.out.println("Four of your friends and you decide to take a weekend to get away.");
+        System.out.println("You find a rustic cabin on Airbnb for super cheap.");
+        System.out.println("After contacting the owner, she warns you that cell service gets spotty there.");
+        System.out.println("What item do you make sure ot bring?");
+        System.out.println("a) A Portable Charger.");
+        System.out.println("b) A pocket Multi-tool.");
+        System.out.println("c) A musical intrument.");
+        System.out.println("d) A Flashlight");
+        String questionSeven = userInputScanner.next();
+        switch(questionSeven){
+            case "a":
+                resourcefulness = resourcefulness + 1;
+                itemSelection = "Portable Charger";
+                System.out.println("Just because cell service doesn't work right doesnt mean having a charged phone is a bad idea!");
+            case "b":
+                caution = caution + 1;
+                itemSelection = "Multi-tool";
+                System.out.println("There is an old slogan that goes 'be prepared!'");
+            case "c":
+                fate = fate + 1;
+                itemSelection = "Instrument";
+                System.out.println("You must be talented! What instrument do you play?");
+                musicInstrument = userInputScanner.next();
+                System.out.println("Awesome! Hopefully your " + musicInstrument + "keeps everyone in good spirits!");
+            case "d":
+                knowledge = knowledge + 1;
+                itemSelection = "Flashlight";
+                System.out.println("Since we do not have night vision, this seems like a smart pick!");
+     }
+        //question 8
+        System.out.println("Driving with your friends, you arrive to the cabin in the woods around noon.");
+        System.out.println("Seeminly perfect, what is the first activity you do?");
+        System.out.println("a) Take a nap");
+        System.out.println("b) Go for a solo hike");
+        System.out.println("c) Play some games with your friends");
+        System.out.println("d) Help prepare the fire for the night");
+        String questionEight = userInputScanner.next();
+        switch(questionEight){
+            case "a":
+                caution = caution + 1;
+                System.out.println("The nap felt great! You feel energized for the rest of the night at the campfire");
+            case "b":
+                fate = fate + 1;
+                System.out.println("When you are out of sight of the cabin, you find a tent that looks like someone has lived in it");
+                System.out.println("You decide to go warn the others, however they are already having fun at the campfire");
+            case "c":
+                knowledge = knowledge + 1;
+                System.out.println("Spending quality time with your friends is what you needed to relax!");
+                System.out.println("in fact, they teach you how to play spiderball! Could be a useful skill for the next trip.");
+            case "d":
+                resourcefulness = resourcefulness + 1;
+                System.out.println("Picking out sticks and chopping logs seems boring, but passing the time with the others was a blast!");
+                System.out.println("Once night rolls around, you enjoy relaxing by the fire");
+        }
+        //question 9
+        System.out.println("After spending the day with your friends, you decide to head back to your room.");
+        if(itemSelection == "Portable Charger"){
+            System.out.println("When you enter the room, you notice that you have a small cell phone signal.");
+            System.out.println("Since you have plenty of power in the charger, it could be fun to kill a few hours.");
+            System.out.println("What do you do?");
+            System.out.println("a) Go right to sleep.");
+            System.out.println("b) Watch some movies before bed");
+            System.out.println("c) Read the news");
+            System.out.println("d) Message some friends");
+            String questionNine = userInputScanner.next();
+            switch(questionNine){
+                case "a":
+                    fate = fate + 2;
+                    itemSelection = null;
+                    System.out.println("After drifting to sleep, you are startled awake from a sound in the room!");
+                    System.out.println("Looking for your phone, you realize that it is missing!");
+                    System.out.println("By using the small amount of light from the moon, decide to look around the room.");
+                case "b":
+                    resourcefulness = resourcefulness + 1;
+                    System.out.println("You decide to watch a relaxing documentary when you hear a noise from the room!");
+                    System.out.println("You stand up so fast you drop you phone and it shatters.");
+                    if(fate >= 3){
+                        itemSelection = null;
+                        System.out.println("The phone is now unusable.");
+                        System.out.println("Hopefully it was not necessary");
+                    }else{
+                        System.out.println("Luckily it is just a little broken");
+                        System.out.println("It might be best to save this incase of an emergency");
+                    }
+                    System.out.println("By using the small amount of light from the moon, decide to look around the room.");
+                case "c":
+                    knowledge = knowledge + 1;
+                    System.out.println("Staying up to date with the world is important!");
+                    System.out.println("As you are reading the latest about entertainment, there is a loud thump in the room!");
+                    System.out.println("Using the screen as a light source you look around the room.");
+                case "d":
+                    caution = caution + 1;
+                    System.out.println("As you are messaging your best friend, you hear a loud noise from the conor of the room!");
+                    System.out.println("Using the screen as a light source you look around the room.");
+            }
+        }else if(itemSelection == "Multi-tool"){
+            System.out.println("When you head back to your room, you find that your door was cracked open slightly");
+            System.out.println("There is sounds of something rummaging in the room.");
+            System.out.println("Since you brought this Multi-tool, you have a few ways to approach this situation");
+            System.out.println("What do you do?");
+            System.out.println("a) Prepare the tool as a weapon, and go into the room");
+            System.out.println("b) Use the tool to bang the door, hopefully to scare whatever is in the room!");
+            System.out.println("c) Run the other way!");
+            System.out.println("d) Use the small flashlight on it to peer into the room");
+            String questionNine = userInputScanner.next();
+            switch(questionNine){
+                case "a":
+                    fate = fate + 1;
+                    System.out.println("As you run into the room, something jumps out and shatters the window!");
+                    System.out.println("Nothing seems to be missing, however you decide to use the multi-tools flashlight to look around the room");
+                case "b":
+                    knowledge = knowledge + 1;
+                    System.out.println("As you bang the door, you hear glass shattering!");
+                    System.out.println("When you carefully walk into the room, you see something jumped out the now broken window");
+                    System.out.println("Nothing seems to be missing, however you decide to use the multi-tools flashlight to look around the room");
+                case "c":
+                    caution = caution + 1;
+                    resourcefulness = resourcefulness + 2;
+                    System.out.println("After you run to the otherside of the cabin, your friends come to your side!");
+                    System.out.println("Gathering the courage as a group, you all decide to investiagte what was in the room");
+                    System.out.println("Armed with flashlights, you and your friends break up into groups and start to look around the room");
+                case "d":
+                    resourcefulness = resourcefulness + 1;
+                    System.out.println("Nothing seems to be missing.");
+                    System.out.println("You decide to use the multi-tools flashlight to look around the room");
+            }
+        }else if(itemSelection == "flashlight"){
+            System.out.println("Luckily walking around in the dark was no problem.");
+            System.out.println("When you get back to your room, you notice that the window is broken!");
+            System.out.println("What do you do?");
+            System.out.println("a) investigate the room with the flashlight");
+            System.out.println("b) call for your friends");
+            System.out.println("c) run the other way!");
+            System.out.println("d) investigate the room without the flashlight");
+            String questionNine = userInputScanner.next();
+            switch(questionNine){
+                case "a":
+                    fate = fate + 1;
+                    System.out.println("As you enter the room you hear a shattering noise!");
+                    System.out.println("Once you are in the room, it looks like the window is now broken");
+                    System.out.println("Scared, you decide to carefully look around the room");
+                case "b":
+                    resourcefulness = resourcefulness + 1;
+                    System.out.println("As you shout your friends names you hear a shattering sound from your room!");
+                    System.out.println("When you enter the room, you see the glittering of glass on the floor");
+                    System.out.println("You join your friends and decide to split up to see if you can find the intruder");
+                case "c":
+                    caution = caution + 1;
+                    System.out.println("As you run the other way you hear your friends yelling for you!");
+                    System.out.println("Carefully going back to your room, you notice that your friends are in your room");
+                    System.out.println("They point out the now shattered window and you all decide to split up to look for the intruder");
+                case "d":
+                    knowledge = knowledge + 1;
+                    System.out.println("You carefully open the door to the room, only to be starteled by glass shattering!");
+                    System.out.println("You now see the window is broken!");
+                    System.out.println("The room looks ok, but you decide to look around some more");
+            }
+        }else if(itemSelection == "Instrument"){
+            System.out.println("you are starting to feel a little tired, and two of your friends have retired to bed.");
+            System.out.println("What do you do?");
+            System.out.println("a) stay up a little longer");
+            System.out.println("b) head back to your room and go to sleep");
+            System.out.println("c) play some more songs for your friends with your " + musicInstrument);
+            System.out.println("d) head back to your room and tune your " + musicInstrument);
+            String questionNine = userInputScanner.next();
+            switch(questionNine){
+                case "a":
+                    fate = fate + 1;
+                    resourcefulness = resourcefulness + 2;
+                    System.out.println("You hear glass shattering from the side of the cabin!");
+                    System.out.println("Joined by your two friends you run to the location of the sound");
+                    System.out.println("it looks like the window to your room has blown out!");
+                    System.out.println("You and your friends decide to investiagte the area around the cabin to find the source of the sound");
+                case "b":
+                    caution = caution + 1;
+                    System.out.println("As you walk back to your room, you hear a shattering sound!");
+                    System.out.println("As you rush in, you see that the window is now broken.");
+                    System.out.println("You decide to look around to see what may have broken it");
+                case "c":
+                    resourcefulness = resourcefulness + 1;
+                    System.out.println("As you are about to get to the refrain in the song, you hear glass shattering!");
+                    System.out.println("You and your friends rush into the cabin to only find that the window in your room is now broken");
+                    System.out.println("Deciding to split up, you start to look for what may have broken the window");
+                case "d":
+                    fate = fate + 1;
+                    knowledge = knowledge + 1;
+                    System.out.println("As you are tuning your instrument in the dark, you hear a small scuffling from the room");
+                    System.out.println("When you look up, a shadow scares jumps out the window!");
+                    System.out.println("You decide to try and follow whatever it was.");
+            }
+        }
+        //question 10 opening section
+        System.out.println("After looking around the cabin, you decide to head outside."
+                + "right outside your window, you find a set of footprints.");
+        switch(hunterSelection){
+            case "The Alien":
+                System.out.println("They do not look like any animal you have ever seen.");
+                System.out.println("The footprint is a foot long, and has three claws in the front, with a single claw at the heel");
+                System.out.println("What is this?");
+                //question 10 the A means Alien 
+                if(caution >= 3){
+                    System.out.println("After looking carefully at the footprint, it seems like there are strange burn marks in them");
+                    System.out.println("It almost looks like the ground was melted by something acidic");
+                }else{
+                    fate = fate + 1;
+                    caution = caution + 1;
+                    System.out.println("You carefully place your fingure into the footprint only to burn yourself!");
+                    System.out.println("It seems like whatever made these footprints, it was leaving acid?");
+                }
+                System.out.println("An animal with acid? That does not seem normal");
+                System.out.println("How do you approach this situation?");
+                System.out.println("a) Stay in the cabin");
+                System.out.println("b) Keep following the footprints");
+                System.out.println("c) Go tell your friends");
+                System.out.println("d) Search for a weapon");
+                String questionTenA = userInputScanner.next();
+                switch(questionTenA){
+                    case "a":
+                    case "b":
+                    case "c":
+                    case "d":
+                }
+                //question 11
+                //question 12
+            case "The Nightmare":
+                System.out.println("As you find the footprints, they dissapear fairly quickkly");
+                System.out.println("Once the footprint is gone, all that is left is little piles of ash");
+                System.out.println("No way this is a normal person.");
+                //question 10 the N means Nightmare
+                if(resourcefulness >= 5){
+                    System.out.println("Taking a step back, you look at the sky and notice it is a abnormal grey");
+                    System.out.println("Is what you are looking at even real?");
+                }else{
+                    fate = fate + 1;
+                    resourcefulness = resourcefulness + 1;
+                    System.out.println("You touch a pile of the ash and feel sick to your stomach");
+                    System.out.println("Your hand goes stright through the pile, leaving it intact");
+                    System.out.println("Is this pile of ash even real? How is it in every footprint?");
+                }
+                System.out.println("Now completely worried, you decide you need to do something!");
+                System.out.println("How do you approach this situation?");
+                System.out.println("a) Stay in the cabin");
+                System.out.println("b) Keep following the footprints");
+                System.out.println("c) Go tell your friends");
+                System.out.println("d) Search for a weapon");
+                String questionTenN = userInputScanner.next();
+                switch(questionTenN){
+                    case "a":
+                    case "b":
+                    case "c":
+                    case "d":
+                //question 11
+                //question 12
+            case "The Ghostface":
+                System.out.println("As you follow the footprints, they become increasinly difficult to see");
+                System.out.println("The boots worn by this person imply that the boots are very light, and don't typcially leave a trace");
+                System.out.println("No way these are from you or your friends.");
+                //question 10 the G means Ghostface
+                System.out.println("Following the footprints, you start to feel like someone is watching you from the tree line");
+                if(resourcefulness >= 3){
+                    System.out.println("Looking into the distance, you notice a flowing piece of fabric stuck in one of the footprints");
+                    System.out.println("Looking at it, the fabric is such a deep black that it is almsot invisible in the night");
+                }else{
+                    fate = fate + 1;
+                    resourcefulness = resourcefulness + 1;
+                    System.out.println("As you follow the footprints, you notice a piece of fabric stuck to the ground");
+                    System.out.println("Reaching for it, you accidently cut your fingure on a random piece of glass");
+                    System.out.println("Looking at the fabric carefully, it is such a deep black that it is almsot invisible in the night");
+                }
+                System.out.println("Now that you know someone is stalking the cabin, how do you appraoch the situation");
+                System.out.println("a) Stay in the cabin");
+                System.out.println("b) Keep following the footprints");
+                System.out.println("c) Go tell your friends");
+                System.out.println("d) Search for a weapon");
+                String questionTenG = userInputScanner.next();
+                switch(questionTenG){
+                    case "a":
+                    case "b":
+                    case "c":
+                    case "d":
+                }
+                //question 11
+                //question 12
+            case "The Shape":
+                System.out.println("The footprints seem way to large to be from any of your friends");
+                System.out.println("The boots worn by this person are huge!");
+                System.out.println("Who do these belong to?");
+                //question 10 the S means Shape
+                if(caution >= 5){
+                    System.out.println("As you walk around the cabin following the footstep, you notice a figure in the distance");
+                    System.out.println("A giant man is standing completely still right inside the tree line");
+                }else{
+                    fate = fate + 1;
+                    caution = caution + 1;
+                    System.out.println("As you follow the footprints, you get to the tree line when you start to hear a very heavy breathing");
+                    System.out.println("Looking around, about a yard from you is a giant man standing completely still");
+                }
+                System.out.println("He seems to just staring at you...");
+                System.out.println("How do yopu react?");
+                System.out.println("a) Run back to the cabin!");
+                System.out.println("b) Yell at the man");
+                System.out.println("c) Slowly try to walk away");
+                System.out.println("d) Start yelling for help");
+                String questionTenS = userInputScanner.next();
+                switch(questionTenS){
+                    case "a":
+                    case "b":
+                    case "c":
+                    case "d":
+            }
+                //question 11
+                //question 12
+        }
+        System.out.println("XXXX...End of simulation...XXXX");
+        System.out.println("Congrats on finishing the simulation!");
+        System.out.println("Let's look at how you did throught this test!");
+               
+        //final compairson
+        System.out.println("During this simulation, you faced  " + hunter + ".");
+        System.out.println("This hunter is a tough one!");
+        System.out.println("Let's take a look at your final standings, shall we?");
+        System.out.println("From this test, you have " + knowledge + " points in knwoledge.");
+        System.out.println("You also have " + resourcefulness + " resourcefulness points.");
+        System.out.println("Finally, you now have " + caution + " points with caution");
+        System.out.println("Now, let us see if you were able to make it out alive.");
+        if(fate >= 5){
+            System.out.println("I am sorry, but it seems like you were not able to make it.");
+            System.out.println("");
+        }else if(knowledge >= intelligence){
+            System.out.print("I am sorry, but it does not look like you were able to make it.");
+            System.out.println("It looks like, in the end, the hunter would have out smarted you");
+        }else if(resourcefulness >= cruelty){
+            System.out.println("I am sorry, but it does not look like you were able to make it.");
+            System.out.println("This hunter was exceptionally cunning, and your scrappy nature failed you");
+            
+        }else if(caution >= sneak){
+            System.out.println("I am sorry, but it does not look like you were able to make it.");
+            System.out.println("This hunter was very sneaky, and you were not cautious enought to see them.");
+        }else{
+            System.out.println("Congragulations! You were able to beat the hunter at their own game!");
+        }
+                
+ }
+}
+}
