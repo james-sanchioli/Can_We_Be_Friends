@@ -489,19 +489,81 @@ public class Calculator {
                 }
                 System.out.println("An animal with acid? That does not seem normal");
                 System.out.println("How do you approach this situation?");
-                System.out.println("a) Stay in the cabin");
+                System.out.println("a) Get back to the cabin");
                 System.out.println("b) Keep following the footprints");
                 System.out.println("c) Go tell your friends");
                 System.out.println("d) Search for a weapon");
                 String questionTenA = userInputScanner.next();
                 switch(questionTenA){
                     case "a":
+                        caution = caution + 1;
+                        System.out.println("Moving back to the cabin, you notice a shadow move into the front door");
+                        System.out.println("Then you hear your friends yelling at each other");
+                        System.out.println("You rush back only to see that your friends are missing");
+                        System.out.println("They even took the car from you...");
+                       //question 11
+                        System.out.println("You hear a strange ticking noise coming from inside the cabin.");
+                        System.out.println("How do you approach this situation?");
+                        System.out.println("a) Investigate where the sound is coming from");
+                        System.out.println("b) Run away from the cabin");
+                        String questionElevenA1 = userInputScanner.next();
+                        switch(questionElevenA1){
+                            case "a":
+                                fate = fate + 1;
+                                System.out.println("You walk into the cabin, and see a giant monster infront of you");
+                                System.out.println("Standing a good 7 feet, this thing looks ready to attack you!");
+                                System.out.println("How do you respond");
+                                System.out.println("a) Fight");
+                                System.out.println("b) Flight");
+                                String questionTwelveA1 = userInputScanner.next();
+                                switch(questionTwelveA1){
+                                    case "a":
+                                        System.out.println("As you prepare to fight, this thing lunges at you");
+                                        System.out.println("Your vision goes dark...");
+                                    case "b":
+                                        System.out.println("As you prepare to flee from here, this monster lunges at you!");
+                                        System.out.println("Your vision goes dark...");
+                                }
+                            case "b":
+                                caution = caution + 1;
+                                System.out.println("As you move into the woods, you hear something start sprinting after you");
+                                System.out.println("When you turn around you see a massive creature on all fours chasing you!");
+                                System.out.println("How do you react?");
+                                System.out.println("a) Keep running");
+                                System.out.println("b) Prepare to fight");
+                                String questionTwelveA2 = userInputScanner.next();
+                                switch(questionTwelveA2){
+                                    case "a":
+                                        System.out.println("This thing is outpacing you at everyturn!");
+                                        System.out.println("As it screeches at you, it lunges ontop of you");
+                                        System.out.println("Your vision goes dark...");
+                                    case "b":
+                                        System.out.println("As you turn to fight this monster, it screeches at you!");
+                                        System.out.println("When it lunges, it lands right ontop of you!");
+                                        System.out.println("Your vision goes dark");
+                                }
+                        }
                     case "b":
+                        knowledge = knowledge + 1;
+                        System.out.println("As you follow the footprints deeper into the woods");
+                        System.out.println("You notice that the creature heads back to the cabin!");
+                        System.out.println("When you finally get back to the front door, you notice that your friends and the car are missing");
+                        System.out.println("As you open the door in the cabin, a strange ticking noise eminates the area");
+                        System.out.println("How do you approach this?");
+                        System.out.println("a) Cautiously enter the cabin");
+                        System.out.println("b) Run away from the cabin");
+                        String questionElevenA2 = userInputScanner.next();
+                        switch(questionElevenA2){
+                            case "a":
+                            case "b":
+                        }
                     case "c":
+                        resourcefulness = resourcefulness + 1;
+                        System.out.println("");
                     case "d":
+                        resourcefulness = resourcefulness + 1;
+                        System.out.println("");
                 }
-                //question 11
-                //question 12
             case "The Nightmare":
                 System.out.println("As you find the footprints, they dissapear fairly quickkly");
                 System.out.println("Once the footprint is gone, all that is left is little piles of ash");
@@ -592,7 +654,8 @@ public class Calculator {
                 //question 12
         }
         System.out.println("XXXX...End of simulation...XXXX");
-        System.out.println("Congrats on finishing the simulation!");
+        System.out.println("Well that was intense, wasn't it?");
+        System.out.println("However it is now all over " + userName + "!");
         System.out.println("Let's look at how you did throught this test!");
                
         //final compairson
@@ -619,7 +682,8 @@ public class Calculator {
         }else{
             System.out.println("Congragulations! You were able to beat the hunter at their own game!");
         }
-                
+        System.out.println("Thank you for playing! I hope you had a good time :)");
+        break;
  }
 }
 }
