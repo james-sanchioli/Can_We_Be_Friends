@@ -1,173 +1,199 @@
 package com.mycompany.horrormoviesurvivalcalculator;
+
 import java.util.Scanner;
+
 public class Calculator {
-     public static void main(String[] args){
-         //Variables to be used in this test
-         //These varibales are for the users side of the test and they enter them
-         String userName;
-         String hunterSelection = null;
-         String itemSelection = null;
-         String musicInstrument = null;
-         //These variables are for the computers side of the test (the players stats)
-         int knowledge = 0;
-         int resourcefulness = 0;
-         int caution = 0;
-         int fate = 0;
-         //These variables are for the computers side of the test (the hunters stats)
-         String hunter = null;
-         int sneak = 0;
-         int cruelty = 0;
-         int intelligence = 0;
-         
-         Scanner userInputScanner = new Scanner(System.in);
-         //gathering the name
-         System.out.println("Welcome to the Horror Movie Survival Test!");
-         System.out.println("To get started, do you mind if we borrow your name?");
-         userName = userInputScanner.next();
-         //intro
-         System.out.println("Well " + userName + " it is a pleasure to meet you!");
-         System.out.println("Here is a quick rundown on how this test works");
-         System.out.println("You will be using your knowledge, resourcefulness, and awareness to outsmart your hunter.");
-         System.out.println("You will have two different scenarios and one similution to answer questions for, but be careful!");
-         System.out.println("If you answer enough questions poorly, you may find that your journy ends quicker than expected.");
-         System.out.println("Ready? Lets begin!");
-         System.out.println("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
-         //hunter switch
-         System.out.println("Pick your hunter by typing in the proper number:");
-         System.out.println("The Alien (1), The Nightmare (2), The Ghostface (3), The Shape (4)");
-         hunterSelection = userInputScanner.next();
-         
-         switch(hunterSelection){
-             case "1":
-                 hunter = "The Alien";
-                 sneak = 6;
-                 cruelty = 3;
-                 intelligence = 3;
-                 System.out.println("The Alien is an extremly sly monster that sneaks up on its victims.");
-                 System.out.println("Do not try to outmonuver it, try to outsmart it");
-             case "2":
-                 hunter = "The Nightmare";
-                 sneak = 4;
-                 cruelty = 5;
-                 intelligence = 3;
-                 System.out.println("The Nightmare is a dream hopping terror that scares its victims at every opprotunity.");
-                 System.out.println("It is best to outsmart this hunter, the real world tends to be his weakness");
-             case "3":
-                 hunter = "The Ghostface";
-                 sneak = 4;
-                 cruelty = 2;
-                 intelligence = 6;
-                 System.out.println("The Ghostface is a highly intelligent human who prowls at night.");
-                 System.out.println("You probably can not match their cunning plans, so you may have to be extremly scrappy.");
-             case "4":
-                 hunter = "The Shape";
-                 sneak = 5;
-                 cruelty = 3;
-                 intelligence = 4;
-                 System.out.println("The Shape is a menace because of thier well rounded knowledge.");
-                 System.out.println("Once the Shape is after you, ");  
-         }                 
-         System.out.println("Best of luck, and I hope to see you at the end.");
-         System.out.println("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
-         //Start Scenario 1
-         System.out.println("Scenario 1: The Urban Legend");
-         //Question 1
-         System.out.println("It is a Friday night and your best friend calls you for a favor.");
-         System.out.println("They and thier partner want to spend a night out, and ask if you could watch thier two kids");
-         System.out.println("being the best friend you are, you agree and head over.");
-         System.out.println("Once you get there, you recieve a phone call from an unknown caller.");
-         System.out.println("When you pick up, all you can hear is breathing. Each time you hang up they just call again.");
-         System.out.println("What do you do?:");
-         System.out.println("a) Ignore them. it is probably a bad joke.");
-         System.out.println("b) Call your friend, see if it is some kind of silly prank.");
-         System.out.println("c) Call the police, it is better safe than sorry.");
-         System.out.println("d) Get the kids and yourself to the neighbors, something is wrong");
-         String questionOne = userInputScanner.next();
-         switch(questionOne){
-             case "a":
-                 fate = fate + 1;
-                 System.out.println("After ignoring them for an hour, it seems like they did not catch the hint.");
-                 System.out.println("The ringing has started scaring the kids, so you decide to call the police");
-             case "b":
-                 knowledge = knowledge + 1;
-                 System.out.println("Your friends swears up and down that this is not a joke, and they are now concerned");
-                 System.out.println("Per your friends request, you call the police");
-             case "c":
-                 caution = caution + 2;
-                 System.out.println("At first you are dismissed by the operator as an axious person.");
-                 System.out.println("However you keep persisting till you reach the contact of the local police station");
-             case "d":
-                 resourcefulness = resourcefulness + 1;
-                 System.out.println("After knocking on all the neighbors doors, another family lets you and the kids in.");
-                 System.out.println("Once you explain your situation, the neighbors convince you to contact the police");
-         }
-         //Question 2
-         System.out.println("Since the calls are not stopping, and the police agree to help you.");
-         System.out.println("They decide to put a trace on your phone, and hope they can find this prankster");
-         System.out.println("Unfortunatly, you are told to wait in your friends house");
-         System.out.println("Where do you wait in the house?");
-         System.out.println("a) The Living Room");
-         System.out.println("b) The Kitchen");
-         System.out.println("c) The Bedroom");
-         System.out.println("d) The Basement");
-         String questionTwo = userInputScanner.next();
-         switch(questionTwo){
-             case "a":
-                 caution = caution + 1;
-                 System.out.println("Smart move. You have plenty of room to move in case of an emergency.");
-             case "b":
-                 resourcefulness = resourcefulness + 1;
-                 System.out.println("The utility of this room can not be understanted. You are ready for anything.");
-             case "c":
-                 fate = fate + 1;
-                 System.out.println("Interesting choice. At least you can wait in a cozy room to recieve your next instruction");
-             case "d":
-                 knowledge = knowledge + 1;
-                 System.out.println("Good call. It will be harder to find you with all the storage containers around.");
-         }
-         //Question 3
-         System.out.println("The prankster finally calls again, and you are forced to listen to the breathing.");
-         System.out.println("Just as you think nothing will happen, you get a call from the police!");
-         System.out.println("All you hear from the officer is 'they are in the house'!");
-         System.out.println("A loud thump sounds from the floor above you.");
-         System.out.println("How do you react?");
-         System.out.println("a) Run out of the house!");
-         System.out.println("b) Prepare to stand your ground!");
-         System.out.println("c) Call your friend to tell them!");
-         System.out.println("d) Go on the offensive and find the harasser yourself!");
-         String questionThree = userInputScanner.next();
-         switch(questionThree){
-             case "a":
-                 knowledge = knowledge + 1;
-                 caution = caution + 1;
-                 System.out.println("Better safe then sorry! Good job on getting out on time, who knows what crazy person was there");
-             case "b":
-                 resourcefulness = resourcefulness + 1;
-                 System.out.println("With your knwoledge, you feel confident you can defend yourself.");
-             case "c":
-                 fate = fate + 1;
-                 System.out.println("You have to let them know some kind of psycho was in their house! Hopefully they don't catch you...");
-             case "d":
-                 fate = fate + 1;
-                 System.out.println("How hard can it be to take down one other person? Hopefully you can make it back in one piece");
-         }
+    //Variables to be used in this test
+    //These varibales are for the users side of the test and they enter them
+
+    static String userName;
+    static String hunterSelection = null;
+    static String itemSelection = null;
+    static String musicInstrument = null;
+    //These variables are for the computers side of the test (the players stats)
+    static int knowledge = 0;
+    static int resourcefulness = 0;
+    static int caution = 0;
+    static int fate = 0;
+    //These variables are for the computers side of the test (the hunters stats)
+    static String hunter = null;
+    static int sneak = 0;
+    static int cruelty = 0;
+    static int intelligence = 0;
+
+    public static void main(String[] args) throws InterruptedException {
+
+        Scanner userInputScanner = new Scanner(System.in);
+        //gathering the name
+        System.out.println("Welcome to the Horror Movie Survival Test!");
+        Thread.sleep(2500);
+        System.out.println("To get started, do you mind if we borrow your name?");
+        userName = userInputScanner.next();
+        //intro
+        System.out.println("Well " + userName + " it is a pleasure to meet you!");
+        System.out.println("Here is a quick rundown on how this test works");
+        System.out.println("You will be using your knowledge, resourcefulness, and awareness to outsmart your hunter.");
+        System.out.println("You will have two different scenarios and one similution to answer questions for, but be careful!");
+        System.out.println("If you answer enough questions poorly, you may find that your journy ends quicker than expected.");
+        System.out.println("Ready? Lets begin!");
+        System.out.println("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
+        //hunter switch
+        System.out.println("Pick your hunter by typing in the proper number:");
+        System.out.println("The Alien (1), The Nightmare (2), The Ghostface (3), The Shape (4)");
+        hunterSelection = userInputScanner.next();
+
+        switch (hunterSelection) {
+            case "1":
+                hunter = "The Alien";
+                sneak = 6;
+                cruelty = 3;
+                intelligence = 3;
+                System.out.println("The Alien is an extremly sly monster that sneaks up on its victims.");
+                System.out.println("Do not try to outmonuver it, try to outsmart it");
+            case "2":
+                hunter = "The Nightmare";
+                sneak = 4;
+                cruelty = 5;
+                intelligence = 3;
+                System.out.println("The Nightmare is a dream hopping terror that scares its victims at every opprotunity.");
+                System.out.println("It is best to outsmart this hunter, the real world tends to be his weakness");
+            case "3":
+                hunter = "The Ghostface";
+                sneak = 4;
+                cruelty = 2;
+                intelligence = 6;
+                System.out.println("The Ghostface is a highly intelligent human who prowls at night.");
+                System.out.println("You probably can not match their cunning plans, so you may have to be extremly scrappy.");
+            case "4":
+                hunter = "The Shape";
+                sneak = 5;
+                cruelty = 3;
+                intelligence = 4;
+                System.out.println("The Shape is a menace because of thier well rounded knowledge.");
+                System.out.println("Once the Shape is after you, ");
+        }
+        System.out.println("Best of luck, and I hope to see you at the end.");
+        System.out.println("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
+        startScenario1();
+        if(fate <= 2){
+            System.out.println("");
+            startScenario2();
+            if (fate <= 4){
+                System.out.println("");
+                startScenario3();
+            }
+        }else{
+            System.out.println("Well I have got some good and bad news for you.");
+            System.out.println("The good news is that the hunter did not need to catch you!");
+            System.out.println("The bad news is that you defenitaly would not survive a horror movie.");
+            System.out.println("In the end, it was totally your choices that led to exit stage left.");
+            System.out.println("Well " + userName + ", why dont you come back later and try again?");
+            }
+}//ends main
+
+    public static void startScenario1() {
+        Scanner userInputScanner = new Scanner(System.in);
+        System.out.println("Scenario 1: The Urban Legend");
+        //Question 1
+        System.out.println("It is a Friday night and your best friend calls you for a favor.");
+        System.out.println("They and thier partner want to spend a night out, and ask if you could watch thier two kids");
+        System.out.println("being the best friend you are, you agree and head over.");
+        System.out.println("Once you get there, you recieve a phone call from an unknown caller.");
+        System.out.println("When you pick up, all you can hear is breathing. Each time you hang up they just call again.");
+        System.out.println("What do you do?:");
+        System.out.println("a) Ignore them. it is probably a bad joke.");
+        System.out.println("b) Call your friend, see if it is some kind of silly prank.");
+        System.out.println("c) Call the police, it is better safe than sorry.");
+        System.out.println("d) Get the kids and yourself to the neighbors, something is wrong");
+        String questionOne = userInputScanner.next();
+        switch (questionOne) {
+            case "a":
+                fate = fate + 1;
+                System.out.println("After ignoring them for an hour, it seems like they did not catch the hint.");
+                System.out.println("The ringing has started scaring the kids, so you decide to call the police");
+                break;
+            case "b":
+                knowledge = knowledge + 1;
+                System.out.println("Your friends swears up and down that this is not a joke, and they are now concerned");
+                System.out.println("Per your friends request, you call the police");
+                break;
+            case "c":
+                caution = caution + 2;
+                System.out.println("At first you are dismissed by the operator as an axious person.");
+                System.out.println("However you keep persisting till you reach the contact of the local police station");
+                break;
+            case "d":
+                resourcefulness = resourcefulness + 1;
+                System.out.println("After knocking on all the neighbors doors, another family lets you and the kids in.");
+                System.out.println("Once you explain your situation, the neighbors convince you to contact the police");
+                break;
+        }
+        //Question 2
+        System.out.println("Since the calls are not stopping, and the police agree to help you.");
+        System.out.println("They decide to put a trace on your phone, and hope they can find this prankster");
+        System.out.println("Unfortunatly, you are told to wait in your friends house");
+        System.out.println("Where do you wait in the house?");
+        System.out.println("a) The Living Room");
+        System.out.println("b) The Kitchen");
+        System.out.println("c) The Bedroom");
+        System.out.println("d) The Basement");
+        String questionTwo = userInputScanner.next();
+        switch (questionTwo) {
+            case "a":
+                caution = caution + 1;
+                System.out.println("Smart move. You have plenty of room to move in case of an emergency.");
+                break;
+            case "b":
+                resourcefulness = resourcefulness + 1;
+                System.out.println("The utility of this room can not be understanted. You are ready for anything.");
+                break;
+            case "c":
+                fate = fate + 1;
+                System.out.println("Interesting choice. At least you can wait in a cozy room to recieve your next instruction");
+                break;
+            case "d":
+                knowledge = knowledge + 1;
+                System.out.println("Good call. It will be harder to find you with all the storage containers around.");
+                break;
+        }
+        //Question 3
+        System.out.println("The prankster finally calls again, and you are forced to listen to the breathing.");
+        System.out.println("Just as you think nothing will happen, you get a call from the police!");
+        System.out.println("All you hear from the officer is 'they are in the house'!");
+        System.out.println("A loud thump sounds from the floor above you.");
+        System.out.println("How do you react?");
+        System.out.println("a) Run out of the house!");
+        System.out.println("b) Prepare to stand your ground!");
+        System.out.println("c) Call your friend to tell them!");
+        System.out.println("d) Go on the offensive and find the harasser yourself!");
+        String questionThree = userInputScanner.next();
+        switch (questionThree) {
+            case "a":
+                knowledge = knowledge + 1;
+                caution = caution + 1;
+                System.out.println("Better safe then sorry! Good job on getting out on time, who knows what crazy person was there");
+                break;
+            case "b":
+                resourcefulness = resourcefulness + 1;
+                System.out.println("With your knwoledge, you feel confident you can defend yourself.");
+                break;
+            case "c":
+                fate = fate + 1;
+                System.out.println("You have to let them know some kind of psycho was in their house! Hopefully they don't catch you...");
+                break;
+            case "d":
+                fate = fate + 1;
+                System.out.println("How hard can it be to take down one other person? Hopefully you can make it back in one piece");
+                break;
+        }
         //ending of Scenario 1
         System.out.println("Scenario 1 is now over. Here is what we have gathered:");
         System.out.println("From that scenario, you have " + knowledge + " points in knwoledge.");
         System.out.println("You also have " + resourcefulness + " resourcefulness points.");
         System.out.println("Finally, you now have " + caution + " points with caution");
-        if(fate > 2){
-            System.out.println("Well I have got some good and bad news for you.");
-            System.out.println("The good news is that the hunter did not need to catch you!");
-            System.out.println("The bad news is that you defenitaly would not survive a horror movie.");
-            System.out.println("In the end, it was totally your choices that led to your stage left exit.");
-            System.out.println("Well " + userName + ", why dont you come back later and try again?");
-            break;
-        }else{
-            System.out.println("Are you ready for the second scenario?");
-            System.out.println("Well, it does not really matter, since it is starting automatically");
-        }  
-        //Scenario 2
+    }//end of Scenario 1
+    public static void startScenario2() {
+        Scanner userInputScanner = new Scanner(System.in);
         System.out.println("Scenario 2: The Chain Letter");
         //question 4
         System.out.println("Your friend has been telling you about this supposidly haunted tape for the past few days.");
@@ -179,7 +205,7 @@ public class Calculator {
         System.out.println("c) Reject, I do not want to mess with that haunted stuff");
         System.out.println("d) Reject, I have other plans");
         String questionFour = userInputScanner.next();
-        switch(questionFour){
+        switch (questionFour) {
             case "a":
                 fate = fate + 1;
                 System.out.println("Your Friends is overjoyed!");
@@ -210,7 +236,7 @@ public class Calculator {
         System.out.println("c) Ignore it!");
         System.out.println("d) Ditch the phone!");
         String questionFive = userInputScanner.next();
-        switch(questionFive){
+        switch (questionFive) {
             case "a":
                 fate = fate + 1;
                 System.out.println("You answer the phone, and a young child whispers '7 days'.");
@@ -226,7 +252,7 @@ public class Calculator {
                 System.out.println("It does not seem to matter how much you ignore it, they just keep calling.");
                 System.out.println("so you accept your fate.");
                 System.out.println("You answer the phone, and a young child whispers '7 days'.");
-                
+
             case "d":
                 fate = fate + 1;
                 knowledge = knowledge + 1;
@@ -241,7 +267,7 @@ public class Calculator {
         System.out.println("c) Prepare to fight in 7 days");
         System.out.println("d) Contact the last person to watch the tape, and see what they say");
         String questionSix = userInputScanner.next();
-        switch(questionSix){
+        switch (questionSix) {
             case "a":
                 fate = fate + 2;
                 System.out.println("Unfortuanly this was not the wisest choice.");
@@ -264,19 +290,21 @@ public class Calculator {
         System.out.println("From that scenario, you have " + knowledge + "points in knwoledge.");
         System.out.println("You also have " + resourcefulness + "resourcefulness points.");
         System.out.println("Finally, you now have " + caution + "points with caution");
-        if(fate > 4){
+        if (fate > 4) {
             System.out.println("Well I have got some good and bad news for you.");
             System.out.println("The good news is that the hunter did not need to catch you!");
             System.out.println("The bad news is that you defenitaly would not survive a horror movie.");
             System.out.println("In the end, it was totally your choices that led to exit stage left.");
             System.out.println("Well " + userName + ", why dont you come back later and try again?");
-            break;
-        }else{
+            System.exit(0);
+        } else {
             System.out.println("You are done with the scenarios and you are ready for the next step!");
             System.out.println("Now it is time to face your hunter.");
             System.out.println("Take your time, and be careful!");
         }
-        //Scenario 3
+    }
+    public static void startScenario3(){
+        Scanner userInputScanner = new Scanner(System.in);
         System.out.println("Simulation: The Cabin in the Woods");
         System.out.println("Four of your friends and you decide to take a weekend to get away.");
         System.out.println("You find a rustic cabin on Airbnb for super cheap.");
@@ -287,7 +315,7 @@ public class Calculator {
         System.out.println("c) A musical intrument.");
         System.out.println("d) A Flashlight");
         String questionSeven = userInputScanner.next();
-        switch(questionSeven){
+        switch (questionSeven) {
             case "a":
                 resourcefulness = resourcefulness + 1;
                 itemSelection = "Portable Charger";
@@ -306,7 +334,7 @@ public class Calculator {
                 knowledge = knowledge + 1;
                 itemSelection = "Flashlight";
                 System.out.println("Since we do not have night vision, this seems like a smart pick!");
-     }
+        }
         //question 8
         System.out.println("Driving with your friends, you arrive to the cabin in the woods around noon.");
         System.out.println("Seeminly perfect, what is the first activity you do?");
@@ -315,7 +343,7 @@ public class Calculator {
         System.out.println("c) Play some games with your friends");
         System.out.println("d) Help prepare the fire for the night");
         String questionEight = userInputScanner.next();
-        switch(questionEight){
+        switch (questionEight) {
             case "a":
                 caution = caution + 1;
                 System.out.println("The nap felt great! You feel energized for the rest of the night at the campfire");
@@ -334,7 +362,7 @@ public class Calculator {
         }
         //question 9
         System.out.println("After spending the day with your friends, you decide to head back to your room.");
-        if(itemSelection == "Portable Charger"){
+        if (itemSelection == "Portable Charger") {
             System.out.println("When you enter the room, you notice that you have a small cell phone signal.");
             System.out.println("Since you have plenty of power in the charger, it could be fun to kill a few hours.");
             System.out.println("What do you do?");
@@ -343,7 +371,7 @@ public class Calculator {
             System.out.println("c) Read the news");
             System.out.println("d) Message some friends");
             String questionNine = userInputScanner.next();
-            switch(questionNine){
+            switch (questionNine) {
                 case "a":
                     fate = fate + 2;
                     itemSelection = null;
@@ -354,11 +382,11 @@ public class Calculator {
                     resourcefulness = resourcefulness + 1;
                     System.out.println("You decide to watch a relaxing documentary when you hear a noise from the room!");
                     System.out.println("You stand up so fast you drop you phone and it shatters.");
-                    if(fate >= 3){
+                    if (fate >= 3) {
                         itemSelection = null;
                         System.out.println("The phone is now unusable.");
                         System.out.println("Hopefully it was not necessary");
-                    }else{
+                    } else {
                         System.out.println("Luckily it is just a little broken");
                         System.out.println("It might be best to save this incase of an emergency");
                     }
@@ -373,7 +401,7 @@ public class Calculator {
                     System.out.println("As you are messaging your best friend, you hear a loud noise from the conor of the room!");
                     System.out.println("Using the screen as a light source you look around the room.");
             }
-        }else if(itemSelection == "Multi-tool"){
+        } else if (itemSelection == "Multi-tool") {
             System.out.println("When you head back to your room, you find that your door was cracked open slightly");
             System.out.println("There is sounds of something rummaging in the room.");
             System.out.println("Since you brought this Multi-tool, you have a few ways to approach this situation");
@@ -383,7 +411,7 @@ public class Calculator {
             System.out.println("c) Run the other way!");
             System.out.println("d) Use the small flashlight on it to peer into the room");
             String questionNine = userInputScanner.next();
-            switch(questionNine){
+            switch (questionNine) {
                 case "a":
                     fate = fate + 1;
                     System.out.println("As you run into the room, something jumps out and shatters the window!");
@@ -404,7 +432,7 @@ public class Calculator {
                     System.out.println("Nothing seems to be missing.");
                     System.out.println("You decide to use the multi-tools flashlight to look around the room");
             }
-        }else if(itemSelection == "flashlight"){
+        } else if (itemSelection == "flashlight") {
             System.out.println("Luckily walking around in the dark was no problem.");
             System.out.println("When you get back to your room, you notice that the window is broken!");
             System.out.println("What do you do?");
@@ -413,7 +441,7 @@ public class Calculator {
             System.out.println("c) run the other way!");
             System.out.println("d) investigate the room without the flashlight");
             String questionNine = userInputScanner.next();
-            switch(questionNine){
+            switch (questionNine) {
                 case "a":
                     fate = fate + 1;
                     System.out.println("As you enter the room you hear a shattering noise!");
@@ -435,7 +463,7 @@ public class Calculator {
                     System.out.println("You now see the window is broken!");
                     System.out.println("The room looks ok, but you decide to look around some more");
             }
-        }else if(itemSelection == "Instrument"){
+        } else if (itemSelection == "Instrument") {
             System.out.println("you are starting to feel a little tired, and two of your friends have retired to bed.");
             System.out.println("What do you do?");
             System.out.println("a) stay up a little longer");
@@ -443,7 +471,7 @@ public class Calculator {
             System.out.println("c) play some more songs for your friends with your " + musicInstrument);
             System.out.println("d) head back to your room and tune your " + musicInstrument);
             String questionNine = userInputScanner.next();
-            switch(questionNine){
+            switch (questionNine) {
                 case "a":
                     fate = fate + 1;
                     resourcefulness = resourcefulness + 2;
@@ -472,16 +500,16 @@ public class Calculator {
         //question 10 opening section
         System.out.println("After looking around the cabin, you decide to head outside."
                 + "right outside your window, you find a set of footprints.");
-        switch(hunterSelection){
+        switch (hunterSelection) {
             case "The Alien":
                 System.out.println("They do not look like any animal you have ever seen.");
                 System.out.println("The footprint is a foot long, and has three claws in the front, with a single claw at the heel");
                 System.out.println("What is this?");
                 //question 10 the A means Alien 
-                if(caution >= 3){
+                if (caution >= 3) {
                     System.out.println("After looking carefully at the footprint, it seems like there are strange burn marks in them");
                     System.out.println("It almost looks like the ground was melted by something acidic");
-                }else{
+                } else {
                     fate = fate + 1;
                     caution = caution + 1;
                     System.out.println("You carefully place your fingure into the footprint only to burn yourself!");
@@ -494,20 +522,20 @@ public class Calculator {
                 System.out.println("c) Go tell your friends");
                 System.out.println("d) Search for a weapon");
                 String questionTenA = userInputScanner.next();
-                switch(questionTenA){
+                switch (questionTenA) {
                     case "a":
                         caution = caution + 1;
                         System.out.println("Moving back to the cabin, you notice a shadow move into the front door");
                         System.out.println("Then you hear your friends yelling at each other");
                         System.out.println("You rush back only to see that your friends are missing");
                         System.out.println("They even took the car from you...");
-                       //question 11
+                        //question 11
                         System.out.println("You hear a strange ticking noise coming from inside the cabin.");
                         System.out.println("How do you approach this situation?");
                         System.out.println("a) Investigate where the sound is coming from");
                         System.out.println("b) Run away from the cabin");
                         String questionElevenA1 = userInputScanner.next();
-                        switch(questionElevenA1){
+                        switch (questionElevenA1) {
                             case "a":
                                 fate = fate + 1;
                                 System.out.println("You walk into the cabin, and see a giant monster infront of you");
@@ -516,7 +544,7 @@ public class Calculator {
                                 System.out.println("a) Fight");
                                 System.out.println("b) Flight");
                                 String questionTwelveA1 = userInputScanner.next();
-                                switch(questionTwelveA1){
+                                switch (questionTwelveA1) {
                                     case "a":
                                         System.out.println("As you prepare to fight, this thing lunges at you");
                                         System.out.println("Your vision goes dark...");
@@ -532,7 +560,7 @@ public class Calculator {
                                 System.out.println("a) Keep running");
                                 System.out.println("b) Prepare to fight");
                                 String questionTwelveA2 = userInputScanner.next();
-                                switch(questionTwelveA2){
+                                switch (questionTwelveA2) {
                                     case "a":
                                         System.out.println("This thing is outpacing you at everyturn!");
                                         System.out.println("As it screeches at you, it lunges ontop of you");
@@ -553,7 +581,7 @@ public class Calculator {
                         System.out.println("a) Cautiously enter the cabin");
                         System.out.println("b) Run away from the cabin");
                         String questionElevenA2 = userInputScanner.next();
-                        switch(questionElevenA2){
+                        switch (questionElevenA2) {
                             case "a":
                             case "b":
                         }
@@ -569,10 +597,10 @@ public class Calculator {
                 System.out.println("Once the footprint is gone, all that is left is little piles of ash");
                 System.out.println("No way this is a normal person.");
                 //question 10 the N means Nightmare
-                if(resourcefulness >= 5){
+                if (resourcefulness >= 5) {
                     System.out.println("Taking a step back, you look at the sky and notice it is a abnormal grey");
                     System.out.println("Is what you are looking at even real?");
-                }else{
+                } else {
                     fate = fate + 1;
                     resourcefulness = resourcefulness + 1;
                     System.out.println("You touch a pile of the ash and feel sick to your stomach");
@@ -586,104 +614,104 @@ public class Calculator {
                 System.out.println("c) Go tell your friends");
                 System.out.println("d) Search for a weapon");
                 String questionTenN = userInputScanner.next();
-                switch(questionTenN){
+                switch (questionTenN) {
                     case "a":
                     case "b":
                     case "c":
                     case "d":
-                //question 11
-                //question 12
-            case "The Ghostface":
-                System.out.println("As you follow the footprints, they become increasinly difficult to see");
-                System.out.println("The boots worn by this person imply that the boots are very light, and don't typcially leave a trace");
-                System.out.println("No way these are from you or your friends.");
-                //question 10 the G means Ghostface
-                System.out.println("Following the footprints, you start to feel like someone is watching you from the tree line");
-                if(resourcefulness >= 3){
-                    System.out.println("Looking into the distance, you notice a flowing piece of fabric stuck in one of the footprints");
-                    System.out.println("Looking at it, the fabric is such a deep black that it is almsot invisible in the night");
-                }else{
-                    fate = fate + 1;
-                    resourcefulness = resourcefulness + 1;
-                    System.out.println("As you follow the footprints, you notice a piece of fabric stuck to the ground");
-                    System.out.println("Reaching for it, you accidently cut your fingure on a random piece of glass");
-                    System.out.println("Looking at the fabric carefully, it is such a deep black that it is almsot invisible in the night");
+                    //question 11
+                    //question 12
+                    case "The Ghostface":
+                        System.out.println("As you follow the footprints, they become increasinly difficult to see");
+                        System.out.println("The boots worn by this person imply that the boots are very light, and don't typcially leave a trace");
+                        System.out.println("No way these are from you or your friends.");
+                        //question 10 the G means Ghostface
+                        System.out.println("Following the footprints, you start to feel like someone is watching you from the tree line");
+                        if (resourcefulness >= 3) {
+                            System.out.println("Looking into the distance, you notice a flowing piece of fabric stuck in one of the footprints");
+                            System.out.println("Looking at it, the fabric is such a deep black that it is almsot invisible in the night");
+                        } else {
+                            fate = fate + 1;
+                            resourcefulness = resourcefulness + 1;
+                            System.out.println("As you follow the footprints, you notice a piece of fabric stuck to the ground");
+                            System.out.println("Reaching for it, you accidently cut your fingure on a random piece of glass");
+                            System.out.println("Looking at the fabric carefully, it is such a deep black that it is almsot invisible in the night");
+                        }
+                        System.out.println("Now that you know someone is stalking the cabin, how do you appraoch the situation");
+                        System.out.println("a) Stay in the cabin");
+                        System.out.println("b) Keep following the footprints");
+                        System.out.println("c) Go tell your friends");
+                        System.out.println("d) Search for a weapon");
+                        String questionTenG = userInputScanner.next();
+                        switch (questionTenG) {
+                            case "a":
+                            case "b":
+                            case "c":
+                            case "d":
+                        }
+                    //question 11
+                    //question 12
+                    case "The Shape":
+                        System.out.println("The footprints seem way to large to be from any of your friends");
+                        System.out.println("The boots worn by this person are huge!");
+                        System.out.println("Who do these belong to?");
+                        //question 10 the S means Shape
+                        if (caution >= 5) {
+                            System.out.println("As you walk around the cabin following the footstep, you notice a figure in the distance");
+                            System.out.println("A giant man is standing completely still right inside the tree line");
+                        } else {
+                            fate = fate + 1;
+                            caution = caution + 1;
+                            System.out.println("As you follow the footprints, you get to the tree line when you start to hear a very heavy breathing");
+                            System.out.println("Looking around, about a yard from you is a giant man standing completely still");
+                        }
+                        System.out.println("He seems to just staring at you...");
+                        System.out.println("How do yopu react?");
+                        System.out.println("a) Run back to the cabin!");
+                        System.out.println("b) Yell at the man");
+                        System.out.println("c) Slowly try to walk away");
+                        System.out.println("d) Start yelling for help");
+                        String questionTenS = userInputScanner.next();
+                        switch (questionTenS) {
+                            case "a":
+                            case "b":
+                            case "c":
+                            case "d":
+                        }
+                    //question 11
+                    //question 12
                 }
-                System.out.println("Now that you know someone is stalking the cabin, how do you appraoch the situation");
-                System.out.println("a) Stay in the cabin");
-                System.out.println("b) Keep following the footprints");
-                System.out.println("c) Go tell your friends");
-                System.out.println("d) Search for a weapon");
-                String questionTenG = userInputScanner.next();
-                switch(questionTenG){
-                    case "a":
-                    case "b":
-                    case "c":
-                    case "d":
+                System.out.println("XXXX...End of simulation...XXXX");
+                System.out.println("Well that was intense, wasn't it?");
+                System.out.println("However it is now all over " + userName + "!");
+                System.out.println("Let's look at how you did throught this test!");
+
+                //final compairson
+                System.out.println("During this simulation, you faced  " + hunter + ".");
+                System.out.println("This hunter is a tough one!");
+                System.out.println("Let's take a look at your final standings, shall we?");
+                System.out.println("From this test, you have " + knowledge + " points in knwoledge.");
+                System.out.println("You also have " + resourcefulness + " resourcefulness points.");
+                System.out.println("Finally, you now have " + caution + " points with caution");
+                System.out.println("Now, let us see if you were able to make it out alive.");
+                if (fate >= 5) {
+                    System.out.println("I am sorry, but it seems like you were not able to make it.");
+                    System.out.println("");
+                } else if (knowledge >= intelligence) {
+                    System.out.print("I am sorry, but it does not look like you were able to make it.");
+                    System.out.println("It looks like, in the end, the hunter would have out smarted you");
+                } else if (resourcefulness >= cruelty) {
+                    System.out.println("I am sorry, but it does not look like you were able to make it.");
+                    System.out.println("This hunter was exceptionally cunning, and your scrappy nature failed you");
+
+                } else if (caution >= sneak) {
+                    System.out.println("I am sorry, but it does not look like you were able to make it.");
+                    System.out.println("This hunter was very sneaky, and you were not cautious enought to see them.");
+                } else {
+                    System.out.println("Congragulations! You were able to beat the hunter at their own game!");
                 }
-                //question 11
-                //question 12
-            case "The Shape":
-                System.out.println("The footprints seem way to large to be from any of your friends");
-                System.out.println("The boots worn by this person are huge!");
-                System.out.println("Who do these belong to?");
-                //question 10 the S means Shape
-                if(caution >= 5){
-                    System.out.println("As you walk around the cabin following the footstep, you notice a figure in the distance");
-                    System.out.println("A giant man is standing completely still right inside the tree line");
-                }else{
-                    fate = fate + 1;
-                    caution = caution + 1;
-                    System.out.println("As you follow the footprints, you get to the tree line when you start to hear a very heavy breathing");
-                    System.out.println("Looking around, about a yard from you is a giant man standing completely still");
-                }
-                System.out.println("He seems to just staring at you...");
-                System.out.println("How do yopu react?");
-                System.out.println("a) Run back to the cabin!");
-                System.out.println("b) Yell at the man");
-                System.out.println("c) Slowly try to walk away");
-                System.out.println("d) Start yelling for help");
-                String questionTenS = userInputScanner.next();
-                switch(questionTenS){
-                    case "a":
-                    case "b":
-                    case "c":
-                    case "d":
-            }
-                //question 11
-                //question 12
+                System.out.println("Thank you for playing! I hope you had a good time :)");
+                break;
         }
-        System.out.println("XXXX...End of simulation...XXXX");
-        System.out.println("Well that was intense, wasn't it?");
-        System.out.println("However it is now all over " + userName + "!");
-        System.out.println("Let's look at how you did throught this test!");
-               
-        //final compairson
-        System.out.println("During this simulation, you faced  " + hunter + ".");
-        System.out.println("This hunter is a tough one!");
-        System.out.println("Let's take a look at your final standings, shall we?");
-        System.out.println("From this test, you have " + knowledge + " points in knwoledge.");
-        System.out.println("You also have " + resourcefulness + " resourcefulness points.");
-        System.out.println("Finally, you now have " + caution + " points with caution");
-        System.out.println("Now, let us see if you were able to make it out alive.");
-        if(fate >= 5){
-            System.out.println("I am sorry, but it seems like you were not able to make it.");
-            System.out.println("");
-        }else if(knowledge >= intelligence){
-            System.out.print("I am sorry, but it does not look like you were able to make it.");
-            System.out.println("It looks like, in the end, the hunter would have out smarted you");
-        }else if(resourcefulness >= cruelty){
-            System.out.println("I am sorry, but it does not look like you were able to make it.");
-            System.out.println("This hunter was exceptionally cunning, and your scrappy nature failed you");
-            
-        }else if(caution >= sneak){
-            System.out.println("I am sorry, but it does not look like you were able to make it.");
-            System.out.println("This hunter was very sneaky, and you were not cautious enought to see them.");
-        }else{
-            System.out.println("Congragulations! You were able to beat the hunter at their own game!");
-        }
-        System.out.println("Thank you for playing! I hope you had a good time :)");
-        break;
- }
-}
-}
+    }
+}//end Program
